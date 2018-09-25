@@ -49,6 +49,7 @@ public class Coin {
 	/**
 	 * Sets the state of the coin to a new state provided by the engine
 	 * @param newState	new state of the coin as input by the engine
+	*/
 	public void set_coin(String newState) {
 		coinState = newState;
 	}
