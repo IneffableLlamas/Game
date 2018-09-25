@@ -22,7 +22,7 @@ public class Coin {
 		String[] coinChoose = {"H", "T"}; // Coin options: H for heads, T for tails
 		Random random = new Random(); 
 
-		this.coinState = arr[random.nextInt(arr.length)]; // Randomly selects 0 or 1 from coinChoose and assigns value to coinState
+		this.coinState = coinChoose[random.nextInt(coinChoose.length)]; // Randomly selects 0 or 1 from coinChoose and assigns value to coinState
 	}
 
 	/**
