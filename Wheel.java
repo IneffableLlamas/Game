@@ -46,7 +46,7 @@ public class Wheel {
 		int newOrder = 0;
 		Coin[] newCoinOrder = new Coin[this.coinWheel.length];
 
-		while(randomCoinIterate <= this.coinWheel.length) {
+		while(randomCoinIterate <= this.coinWheel.length-1) {
 			newCoinOrder[newOrder] = this.coinWheel[randomCoinIterate];
 			randomCoinIterate++;
 			newOrder++;
