@@ -1,3 +1,4 @@
+import java.util.Random;
 /**
  *
  * Wheel class for Game
@@ -21,10 +22,31 @@ public class Wheel {
 	}
 
 	public Coin[] get_wheel() {
-		
+		return this.coinWheel;
 	}
 
 	public void spin() {
+		Random randomizer = new Random();
+		int randomCoinMaster = randomizer.nextInt(this.coinWheel.length);
+		int randomCoinIterate = randomCoinMaster;
+		int newOrder = 0;
+		Coin[] newCoinOrder = new Coin[this.coinWheel.length];
 
+		while(randomCoinIterate <= this.coinWheel.length) {
+			newCoinOrder[newOrder] = this.coinWheel[randomCoinIterate];
+			randomCoinIterate++;
+			newOrder++;
+		}
+
+		int iterator = 0;
+		while (iterator < randomCoinMaster) {
+			newCoinOrder[newOrder] = this.coinWheel[iterator];
+			iterator++;
+			newOrder++;
+		}
+
+		for(int i = 0; i < newCoinOrder.length; i++) {
+			this.coinWheel[i] = newCoinOrder[i];
+		}
 	}
-} 
+}
