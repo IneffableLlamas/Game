@@ -21,8 +21,22 @@ public class Wheel {
 		}
 	}
 
-	public Coin[] get_wheel() {
-		return this.coinWheel;
+	public void get_wheel(int[] selections) {
+		int reveal = 0;
+		for(int i = 0; i < this.coinWheel.length; i++) {
+			if(i == selections[reveal]) {
+				System.out.print(this.coinWheel[i].get_coin() + " ");
+				reveal++;
+			}
+			else {
+				System.out.print("X ");
+			}
+		}
+		System.out.println("");
+	}
+
+	public void set_wheel_coin(int coinIndex) {
+		this.coinWheel[coinIndex].flip();
 	}
 
 	public void spin() {
