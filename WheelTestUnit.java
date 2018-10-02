@@ -2,6 +2,8 @@ import static org.junit.jupiter.api.Assertions.*;
 
 import org.junit.jupiter.api.Test;
 
+import java.util.Arrays;
+
 class WheelTestUnit {
 
 	@Test
@@ -18,13 +20,35 @@ class WheelTestUnit {
 	}
 
 	@Test
-	void testGet_wheel() {
+	void testPrint_wheel() {
 		fail("Not yet implemented");
 	}
 
 	@Test
 	void testSet_wheel_coin() {
-		fail("Not yet implemented");
+		Wheel testwheel = new Wheel(4);
+		Coin[] wheel = testwheel.get_wheel();
+		char[] original = new char[4];
+		for(int i = 0; i < 4; i++) {
+			original[i] = wheel[i].get_coin();
+		}
+		
+		
+		testwheel.set_wheel_coin(4);
+		for(int i = 0; i < 4; i++) {
+			assertEquals(original[i], wheel[i].get_coin());
+		}
+		
+		testwheel.set_wheel_coin(-1);
+		for(int i = 0; i < 4; i++) {
+			assertEquals(original[i],wheel[i].get_coin());
+		}
+		
+
+		testwheel.set_wheel_coin(1);
+		char newval = wheel[1].get_coin();
+		assertNotEquals(original[1],newval);		
+		
 	}
 
 	@Test

@@ -45,7 +45,8 @@ public class Wheel {
 
 	// Should we rename this to flip_wheel_coin? I think it would be more descriptive?
 	public void set_wheel_coin(int coinIndex) {
-		this.coinWheel[coinIndex].flip();
+		if(coinIndex > 0 && coinIndex < coinWheel.length)
+			this.coinWheel[coinIndex].flip();
 	}
 
 	public void spin() {
