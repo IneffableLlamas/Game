@@ -8,6 +8,7 @@ class CoinTestUnit {
 	void testCoin() {
 		Coin testcoin = new Coin();
 		assertNotNull(testcoin);
+		assertTrue(testcoin.get_coin() == 'H' || testcoin.get_coin() == 'T');
 	}
 
 	@Test
