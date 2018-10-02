@@ -53,7 +53,35 @@ class WheelTestUnit {
 
 	@Test
 	void testSpin() {
-		fail("Not yet implemented");
+		Wheel testwheel = new Wheel(6);
+		Coin[] wheel = testwheel.get_wheel();
+		char[] originaltwice = new char[12];
+		for(int i = 0; i < 6; i++) {
+			originaltwice[i] = wheel[i].get_coin();
+			originaltwice[6+i] = originaltwice[i];
+		}
+		
+		testwheel.spin();
+		char[] spun = new char[6];
+		for(int i = 0; i < 6; i++) {
+			spun[i] = wheel[i].get_coin();
+		}
+		boolean rotate = false;
+		char[] compare = new char[6];
+		for(int i = 0; i < 6; i++) {
+			compare = Arrays.copyOfRange(originaltwice, i, i+6);
+			if(Arrays.equals(compare, spun)) {
+				rotate = true;
+				break;
+			}
+		}
+		assertTrue(rotate);
+		
+		Arrays.sort(compare);
+		Arrays.sort(spun);
+		
+		assertTrue(Arrays.equals(compare,spun));
+		
 	}
 
 }
