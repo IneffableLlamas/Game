@@ -51,6 +51,9 @@ public class Coin {
 	 * @param newState	new state of the coin as input by the engine
 	*/
 	public void set_coin(char newState) {
-		coinState = newState;
+		if(newState == 'H' || newState == 'T')
+			coinState = newState;
+		else
+			System.out.println("Invalid coin value");
 	}
 }
