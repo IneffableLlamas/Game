@@ -15,13 +15,21 @@ public class Wheel {
 	private Coin[] coinWheel;
 
 	public Wheel(int sections) {
+		if(sections < 0)
+			sections = 0;
+		
 		this.coinWheel = new Coin[sections];
 		for(int i = 0; i < coinWheel.length; i++) {
 			coinWheel[i] = new Coin();
 		}
 	}
 
-	public void get_wheel(int[] selections) {
+	public Coin[] get_wheel() {
+		return coinWheel;
+	}
+	
+
+	public void print_wheel(int[] selections) {
 		int reveal = 0;
 		for(int i = 0; i < this.coinWheel.length; i++) {
 			if(i == selections[reveal]) {
@@ -35,6 +43,7 @@ public class Wheel {
 		System.out.println("");
 	}
 
+	// Should we rename this to flip_wheel_coin? I think it would be more descriptive?
 	public void set_wheel_coin(int coinIndex) {
 		this.coinWheel[coinIndex].flip();
 	}
