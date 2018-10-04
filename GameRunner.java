@@ -1,5 +1,3 @@
-
-
 /**
  *
  * Wheel class for Game
